@@ -115,10 +115,32 @@ class CreditCardsPage extends StatelessWidget {
     // Wajib memanggil fungsi _buildLogosBlock() dan _buildDetailsBlock() di dalamnya.
     return Card(
       color: color,
+      elevation: 5,
+      margin: const EdgeInsets.symmetric(horizontal: 8),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
       child: Container(
         height: 200,
-        // KODE UI ANDA DI SINI
-        child: const Center(child: Text("UI Kartu belum dibuat...")),
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            _buildLogosBlock(),
+            const Spacer(),
+            Text(
+              cardNumber,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                letterSpacing: 2,
+              ),
+            ),
+            const SizedBox(height: 18),
+            _buildDetailsBlock(
+              cardHolder: cardHolder,
+              cardExpiration: cardExpiration,
+            ),
+          ],
+        ),
       ),
     );
   }
