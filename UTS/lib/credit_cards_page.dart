@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 class CreditCardsPage extends StatelessWidget {
   
   // TODO 1: GANTI VARIABEL INI DENGAN DATA DIRI ANDA
-  final String namaMahasiswa = "NAMA LENGKAP ANDA"; // Jangan biarkan kosong!
-  final String nimMahasiswa = "NIM ANDA"; // Jangan biarkan kosong!
+  final String namaMahasiswa = "Vinsent"; // Jangan biarkan kosong!
+  final String nimMahasiswa = "20245520013"; // Jangan biarkan kosong!
 
   @override
   Widget build(BuildContext context) {
     
     // TODO 2: BUAT LOGIKA KONDISIONAL BERDASARKAN NIM!
     // Aturan:
-    // - Jika digit terakhir NIM Anda Ganjil: warnaKartu1 = Biru (0xFF090943), warnaKartu2 = Merah.
+    // - Jika digit terakhir NIM Anda Ganjil: warnaKartu1 = Biru (0xFF090943), warnaKartu2 = Merah 0xFF430909.
     // - Jika digit terakhir NIM Anda Genap: warnaKartu1 = Hitam (0xFF000000), warnaKartu2 = Hijau.
     // (Silakan tulis kode logika if-else Anda di sini sebelum return)
     
     Color warnaKartu1 = Color(0xFF090943); // <- Ubah agar dinamis menggunakan logika IF
-    Color warnaKartu2 = Color(0xFF000000); // <- Ubah agar dinamis menggunakan logika IF
+    Color warnaKartu2 = Color(0xFF430909); // <- Ubah agar dinamis menggunakan logika IF
 
     return SingleChildScrollView(
       child: Container(
