@@ -80,13 +80,25 @@ class CreditCardsPage extends StatelessWidget {
         // KODE UI ANDA DI SINI
         // padding 1 
         Padding(
-            padding: const EdgeInsets.only(),
-
+          padding: const EdgeInsets.only(left: 8, top: 18, bottom: 4),
+          child: Text(
+            title,
+            style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
         // padding 2
         Padding(
-            padding: const EdgeInsets.only(),
-
+          padding: const EdgeInsets.only(left: 8, bottom: 20),
+          child: Text(
+            subTitle,
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.grey.shade600,
+            ),
+          ),
         ),
       ],
     );
