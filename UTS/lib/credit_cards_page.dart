@@ -155,6 +155,28 @@ class CreditCardsPage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         // KODE GAMBAR ANDA DI SINI
+        Image.asset(
+          'assets/images/contact_less.png',
+          width: 34,
+          height: 34,
+          fit: BoxFit.contain,
+          errorBuilder: (_, __, ___) => const Icon(
+            Icons.contactless,
+            color: Colors.white,
+            size: 30,
+          ),
+        ),
+        Image.asset(
+          'assets/images/mastercard.png',
+          width: 58,
+          height: 38,
+          fit: BoxFit.contain,
+          errorBuilder: (_, __, ___) => const Icon(
+            Icons.credit_card,
+            color: Colors.white,
+            size: 34,
+          ),
+        ),
       ],
     );
   }
@@ -163,3 +185,55 @@ class CreditCardsPage extends StatelessWidget {
   // buat   FloatingActionButton
   
   // Build Column
+
+Row _buildDetailsBlock({
+    required String cardHolder,
+    required String cardExpiration,
+  }) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: <Widget>[
+        _buildCardDetail(label: 'CARDHOLDER', value: cardHolder),
+        _buildCardDetail(label: 'VALID THRU', value: cardExpiration),
+      ],
+    );
+  }
+
+  Column _buildCardDetail({required String label, required String value}) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          label,
+          style: const TextStyle(color: Colors.white70, fontSize: 9),
+        ),
+        const SizedBox(height: 3),
+        Text(
+          value,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 13,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
+    );
+  }
+
+  // TODO 7: Buat tombol untuk menambahkan kartu baru.
+  Widget _buildAddCardButton({required Icon icon, required Color color}) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 18, bottom: 18),
+      child: Center(
+        child: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: color,
+          foregroundColor: Colors.white,
+          tooltip: 'Tambah kartu',
+          child: icon,
+        ),
+      ),
+    );
+  }
+}
