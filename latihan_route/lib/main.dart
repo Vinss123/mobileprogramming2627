@@ -7,7 +7,7 @@ class LayarKedua extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Screen 2'),
+          title: const Text('Ini Screen 2'),
         ),
         body: Center(
             child: ElevatedButton(
