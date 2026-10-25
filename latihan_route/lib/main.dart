@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 
+import 'layarkeduapisah.dart';
+
 class LayarKedua extends StatelessWidget {
   const LayarKedua({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Ini Screen 2'),
-        ),
-        body: Center(
-            child: ElevatedButton(
+      appBar: AppBar(title: const Text('Ini Screen 2')),
+      body: Center(
+        child: ElevatedButton(
           child: const Text("Ini screen kedua, tap icon back di app bar"),
           onPressed: () {
             Navigator.of(context).pop();
           },
-        )));
+        ),
+      ),
+    );
   }
 }
 
@@ -29,10 +31,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Test Route',
+      title: 'Latihan Route',
+      initialRoute: '/',
       routes: {
         '/': (context) => const MyHome(),
-        '/layar2': (context) => const LayarKedua() 
+        '/layar2': (context) => const LayarKedua(),
       },
     );
   }
@@ -45,15 +48,34 @@ class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Test Route'),
-      ),
+      appBar: AppBar(title: const Text('Halaman Utama')),
       body: Center(
-          child: ElevatedButton(
-              child: const Text('Ke screen Kedua'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pushNamed("/layar2");
-              })),
+                Navigator.pushNamed(context, '/layar2');
+              },
+              child: const Text('Ke Layar Kedua'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LayarKeduaPisah(
+                      pesan: 'halloo ini pesan dari screen 1',
+                    ),
+                  ),
+                );
+              },
+              child: const Text('Ke Layar Kedua Pisah'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
