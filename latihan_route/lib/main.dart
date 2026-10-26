@@ -31,10 +31,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Latihan Route',
-      initialRoute: '/',
+      title: 'Test Route',
+      home: MyHome(),
       routes: {
-        '/': (context) => const MyHome(),
         '/layar2': (context) => const LayarKedua(),
       },
     );
