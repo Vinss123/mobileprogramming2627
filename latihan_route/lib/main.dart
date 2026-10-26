@@ -32,8 +32,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Test Route',
-      home: MyHome(),
+      initialRoute: '/',
       routes: {
+        '/': (context) => const MyHome(),
         '/layar2': (context) => const LayarKedua(),
       },
     );
