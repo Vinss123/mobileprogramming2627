@@ -47,22 +47,21 @@ class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Halaman Utama')),
+      appBar: AppBar(title: const Text('Test Route')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/layar2');
+                Navigator.of(context).pushNamed('/layar2');
               },
-              child: const Text('Ke Layar Kedua'),
+              child: const Text('Ke screen Kedua'),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
+                Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => const LayarKeduaPisah(
                       pesan: 'halloo ini pesan dari screen 1',
@@ -70,7 +69,7 @@ class MyHome extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text('Ke Layar Kedua Pisah'),
+              child: const Text('Ke Screen Kedua Pisah'),
             ),
           ],
         ),
